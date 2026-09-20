@@ -61,6 +61,7 @@ export default function CatalogFilters({onFilterChange, initialSearch = '',initi
                     placeholder='Название/Автор книги'
                     className='filter-input'
                 />
+            </div>
             <div className='filters-block'>
                 <label>Категории</label>
                 <div className='category-list'>
@@ -73,7 +74,7 @@ export default function CatalogFilters({onFilterChange, initialSearch = '',initi
                                 checked={category ===cat.value}
                                 onChange={()=>handleCategoryChange(cat.value)}
                             />
-                            {cat.label}
+                            <span>{cat.label}</span>
                         </label>
                     ))}
                 </div>
@@ -104,6 +105,5 @@ export default function CatalogFilters({onFilterChange, initialSearch = '',initi
                 Сбросить фильтры
             </button>  
             </div>
-        </div>
-  )
+  );
 }
