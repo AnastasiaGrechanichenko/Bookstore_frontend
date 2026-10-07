@@ -5,6 +5,7 @@ import {useAuthStore} from '../../store/useAuthStore'
 import './RegisterPage.css'
 
 export default function RegisterPage() {
+  const [agree,setAgree] = useState(false);
   const[login,setLogin]=useState('')
   const[password,setPassword]=useState('')
   const[name,setName]=useState('')
@@ -18,6 +19,10 @@ export default function RegisterPage() {
   const handleSubmit = async(e)=>{
     e.preventDefault();
     clearError();
+
+    if(!agree) {
+      return;
+    }
 
     try {
       await register ({
@@ -121,11 +126,32 @@ export default function RegisterPage() {
             />
           </div>
 
-          {error && <p className='error'>{error}</p>}
+          <div className='form-group checkbox-group'>
+            <label className='checkbox-label'>
+              <input 
+                type='checkbox'
+                checked={agree}
+                onChange={(e)=>setAgree(e.target.checked)}
+                disabled={isLoading}
+              />
+              <span>
+                Я согласен с <Link to='/privacy' target='_blank'>политикой конфиденциальности</Link> 
+                и <Link to='/terms' target='_blank'>пользовательским соглашением</Link>
+              </span>
 
-          <button type='submit' disabled={isLoading}>
-            {isLoading? 'Регистрация...':'Зарегистрироваться'}
-          </button>
+            </label>
+          </div>
+        
+
+          {error && <p className='error'>{error}</p>}
+          <div
+            className='submit-wrapper'
+            title={!agree?'Поставьте галочку согласия':''}
+          >
+            <button type='submit' disabled={isLoading||!agree}>
+              {isLoading? 'Регистрация...':'Зарегистрироваться'}
+            </button>
+          </div>
           </form>
           <p>
             Есть аккаунт?   <Link to='/login'>Войти</Link>
