@@ -55,9 +55,9 @@
   cursor: not-allowed;
 }
 
-.error {
+.login-page .error {
   color: #ff4444;
-  font-size: 14px;
+  font-size: 20px;
   margin-bottom: 16px;
   text-align: center;
 }
@@ -100,7 +100,6 @@ button[type="submit"]:disabled {
   text-decoration: underline;
 }
 
-
 @media (min-width: 769px) and (max-width: 1024px) {
   .login-wrapper {
     padding: 30px 16px;
@@ -129,23 +128,19 @@ button[type="submit"]:disabled {
   }
 }
 
-
 @media (max-width: 768px) {
   .login-wrapper {
     padding: 20px 12px;
   }
-
   .login-page {
     padding: 24px 16px;
     max-width: 100%;
     border-width: 3px;
   }
-
   .login-page h1 {
     font-size: 22px;
     margin-bottom: 20px;
   }
-
   .login-form {
     margin-bottom: 16px;
   }
@@ -157,16 +152,13 @@ button[type="submit"]:disabled {
     padding: 10px 12px;
     font-size: 15px;
   }
-
-  .error {
+  .login-page .error {
     font-size: 13px;
   }
-
   button[type="submit"] {
     font-size: 16px;
     padding: 12px;
   }
-
   .login-page p {
     font-size: 16px;
     margin-top: 20px;
@@ -177,18 +169,15 @@ button[type="submit"]:disabled {
   .login-wrapper {
     padding: 12px 8px;
   }
-
   .login-page {
     padding: 16px 12px;
     border-width: 2px;
     border-radius: 8px;
   }
-
   .login-page h1 {
     font-size: 18px;
     margin-bottom: 16px;
   }
-
   .login-form {
     margin-bottom: 12px;
   }
@@ -199,16 +188,13 @@ button[type="submit"]:disabled {
     padding: 8px 10px;
     font-size: 14px;
   }
-
-  .error {
+  .register-page .error{
     font-size: 12px;
   }
-
   button[type="submit"] {
     font-size: 14px;
     padding: 10px;
   }
-
   .login-page p {
     font-size: 14px;
     margin-top: 16px;

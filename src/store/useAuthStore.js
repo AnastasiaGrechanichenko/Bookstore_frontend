@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { userApi } from '../api/userApi.js'
+import { setUnauthorizedHandler } from "../api/client.js";
 
 
 export const useAuthStore = create((set) => ({
@@ -113,6 +114,16 @@ export const useAuthStore = create((set) => ({
 
 
 }))
+
+
+setUnauthorizedHandler(() => {
+    const{isAuthenticated,logout} = useAuthStore.getState();
+
+    if (isAuthenticated) {
+        logout();
+        window.location.href = '/login';
+    }
+});
 
 
     
